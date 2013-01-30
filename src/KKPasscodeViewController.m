@@ -162,6 +162,11 @@
 			[boxesView addSubview:[[_boxes lastObject] objectAtIndex:i]];
 		}
 		[_setPasscodeTableView.tableHeaderView addSubview:boxesView];
+        
+        if (self.delegate != nil && [self.delegate respondsToSelector:@selector(footerViewForPasscodeMode:)])
+        {
+            _setPasscodeTableView.tableFooterView = [self.delegate footerViewForPasscodeMode:_mode];
+        }
 		
 		_confirmPasscodeTableView.tableHeaderView = [self headerViewForTextField:_confirmPasscodeTextField];
 		[_tableViews addObject:_confirmPasscodeTableView];
@@ -184,6 +189,11 @@
 			[boxesView addSubview:[[_boxes lastObject] objectAtIndex:i]];
 		}
 		[_enterPasscodeTableView.tableHeaderView addSubview:boxesView];
+        
+        if (self.delegate != nil && [self.delegate respondsToSelector:@selector(footerViewForPasscodeMode:)])
+        {
+            _enterPasscodeTableView.tableFooterView = [self.delegate footerViewForPasscodeMode:_mode];
+        }
 	}
 	
 	[self.view addSubview:[_tableViews objectAtIndex:0]];
