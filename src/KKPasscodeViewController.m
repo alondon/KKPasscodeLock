@@ -612,7 +612,7 @@
         if ([textField isEqual:_enterPasscodeTextField]) {
             headerLabel.text = KKPasscodeLockLocalizedString(@"Enter your passcode", @"");
         } else if ([textField isEqual:_setPasscodeTextField]) {
-            headerLabel.text = KKPasscodeLockLocalizedString(@"Enter a passcode", @"");
+            headerLabel.text = KKPasscodeLockLocalizedString(@"Create a passcode", @"");
         } else if ([textField isEqual:_confirmPasscodeTextField]) {
             headerLabel.text = KKPasscodeLockLocalizedString(@"Re-enter your passcode", @"");
         }
