@@ -518,6 +518,7 @@
             _confirmPasscodeTextField.text = @"";
             _setPasscodeTextField.text = @"";
             _passcodeConfirmationWarningLabel.text = KKPasscodeLockLocalizedString(@"Passcodes did not match. Try again.", @"");
+            _setPasscodeTableView.tableFooterView = nil;
             [self moveToPreviousTableView];
         } else {
             if ([KKKeychain setString:_setPasscodeTextField.text forKey:@"passcode"]) {
